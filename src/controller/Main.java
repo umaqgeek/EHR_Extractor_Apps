@@ -103,7 +103,7 @@ public class Main {
 
             for (int i = 0; i < data1.size(); i++) {
                 
-                System.out.println("PMI No : " + data1.get(i).get(4));
+                //System.out.println("PMI No : " + data1.get(i).get(4));
                 
                 String PMI_no = data1.get(i).get(4);
                 String NATIONAL_ID_NO = data1.get(i).get(0);
@@ -117,7 +117,7 @@ public class Main {
 
                 ArrayList<ArrayList<String>> data2 = rc.getQuerySQL(Config.ipAddressServer, Config.portServer, sql2);
 
-        //        System.out.println("Patient " + PMI_no + ": " + data2.size());
+        //        //System.out.println("Patient " + PMI_no + ": " + data2.size());
 
                 for (int j = 0; j < data2.size(); j++) { //Show records in arrayList taken from table ehr_central row
                     
@@ -162,8 +162,8 @@ public class Main {
                     String dataROS[][] = mr.getData("ROS");
                     int rowsROS = mr.getRowNums();                         
                     
-        //            System.out.println("Central Code " + Central_Code); //this line is to display Central_Code column data.
-        //            System.out.println("Episode " + episode + "\nCCN:" + rowsCCN + " DGS:" + rowsDGS + " DTO:" + rowsDTO + " VTS:" + rowsVTS);
+        //            //System.out.println("Central Code " + Central_Code); //this line is to display Central_Code column data.
+        //            //System.out.println("Episode " + episode + "\nCCN:" + rowsCCN + " DGS:" + rowsDGS + " DTO:" + rowsDTO + " VTS:" + rowsVTS);
 
                 
                     
@@ -257,11 +257,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";
 
                             status_ccn_lhr_signs = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query1);
-                            //System.out.println("query CCN: " + query1);
-                            //System.out.println("status CCN " + status);
+                            ////System.out.println("query CCN: " + query1);
+                            ////System.out.println("status CCN " + status);
                             if (status_ccn_lhr_signs == false){
-                                System.out.println("Failed to insert data into lhr_signs (CCN) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for CCN: " + query1);
+                                //System.out.println("Failed to insert data into lhr_signs (CCN) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for CCN: " + query1);
                                 total_fail_insert++;
                             }
 
@@ -381,11 +381,11 @@ public class Main {
                                     + "'" + LOCATION_CODE + "')";
 
                             status_dgs_lhr_diagnosis = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query2);
-                            //System.out.println("stat:" + stat);
-                            //System.out.println("query:" + query2);
+                            ////System.out.println("stat:" + stat);
+                            ////System.out.println("query:" + query2);
                             if (status_dgs_lhr_diagnosis == false){
-                                System.out.println("Failed to insert data into lhr_diagnosis (DGS) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for DGS: " + query2);
+                                //System.out.println("Failed to insert data into lhr_diagnosis (DGS) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for DGS: " + query2);
                                 total_fail_insert++;
                             }
 
@@ -523,12 +523,12 @@ public class Main {
                                     + "'" + LOCATION_CODE + "')";
 
                             status_dto_lhr_medication = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query3);
-                            //System.out.println("status dto : " + stt);
-                           // System.out.println("sql dto : " + query3);
+                            ////System.out.println("status dto : " + stt);
+                           // //System.out.println("sql dto : " + query3);
                             
                             if (status_dto_lhr_medication == false){
-                                System.out.println("Failed to insert data into lhr_medication (DTO) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for DGS: " + query3);
+                                //System.out.println("Failed to insert data into lhr_medication (DTO) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for DGS: " + query3);
                                 total_fail_insert++;
                             }                            
 
@@ -664,11 +664,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";                            
 
                             status_vts_lhr_wh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_wh);
-                        //    System.out.println("status vts:" + status_vts_lhr_wh);
-                        //    System.out.println("sql vts : " + query_vts_lhr_wh);
+                        //    //System.out.println("status vts:" + status_vts_lhr_wh);
+                        //    //System.out.println("sql vts : " + query_vts_lhr_wh);
                             if (status_vts_lhr_wh == false){
-                                System.out.println("Failed to insert data into lhr_weight_height (VTS_WH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_BP: " + query_vts_lhr_wh);
+                                //System.out.println("Failed to insert data into lhr_weight_height (VTS_WH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_BP: " + query_vts_lhr_wh);
                             }                            
                             
                             
@@ -713,11 +713,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";                            
 
                             status_vts_lhr_bp = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bp);
-                        //    System.out.println("status vts_lhr_bp:" + status_vts_lhr_bp);
-                        //    System.out.println("sql vts_lhr_bp : " + query_vts_lhr_bp);     
+                        //    //System.out.println("status vts_lhr_bp:" + status_vts_lhr_bp);
+                        //    //System.out.println("sql vts_lhr_bp : " + query_vts_lhr_bp);     
                             if (status_vts_lhr_bp == false){
-                                System.out.println("Failed to insert data into lhr_bp (VTS_BP) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_BP: " + query_vts_lhr_bp);
+                                //System.out.println("Failed to insert data into lhr_bp (VTS_BP) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_BP: " + query_vts_lhr_bp);
                                 total_fail_insert++;
                             }     
                             
@@ -755,11 +755,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";     
 
                             status_vts_lhr_bg = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bg);
-                    //        System.out.println("status vts_lhr_bg:" + status_vts_lhr_bg);
-                    //        System.out.println("sql vts_lhr_bg : " + query_vts_lhr_bg);                            
+                    //        //System.out.println("status vts_lhr_bg:" + status_vts_lhr_bg);
+                    //        //System.out.println("sql vts_lhr_bg : " + query_vts_lhr_bg);                            
                             if (status_vts_lhr_bg == false){
-                                System.out.println("Failed to insert data into lhr_blood_glucose (VTS_BG) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_BG: " + query_vts_lhr_bg);
+                                //System.out.println("Failed to insert data into lhr_blood_glucose (VTS_BG) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_BG: " + query_vts_lhr_bg);
                                 total_fail_insert++;
                             } 
                             
@@ -798,11 +798,11 @@ public class Main {
                             
 
                             status_vts_lhr_spo2 = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_spo2);
-                    //        System.out.println("status vts_lhr_spo2:" + status_vts_lhr_spo2);
-                    //        System.out.println("sql vts_lhr_spo2 : " + query_vts_lhr_spo2);     
+                    //        //System.out.println("status vts_lhr_spo2:" + status_vts_lhr_spo2);
+                    //        //System.out.println("sql vts_lhr_spo2 : " + query_vts_lhr_spo2);     
                             if (status_vts_lhr_spo2 == false){
-                                System.out.println("Failed to insert data into lhr_spo2 (VTS_SPO2) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_SPO2: " + query_vts_lhr_spo2);
+                                //System.out.println("Failed to insert data into lhr_spo2 (VTS_SPO2) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_SPO2: " + query_vts_lhr_spo2);
                                 total_fail_insert++;
                             }
                             
@@ -839,11 +839,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";       
 
                             status_vts_lhr_procedure = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_procedure);
-                        //    System.out.println("status vts_lhr_procedure:" + status_vts_lhr_procedure);
-                        //    System.out.println("sql vts_lhr_procedure : " + query_vts_lhr_procedure);     
+                        //    //System.out.println("status vts_lhr_procedure:" + status_vts_lhr_procedure);
+                        //    //System.out.println("sql vts_lhr_procedure : " + query_vts_lhr_procedure);     
                             if (status_vts_lhr_procedure == false){
-                                System.out.println("Failed to insert data into lhr_procedure (VTS_PROC) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_PROC: " + query_vts_lhr_procedure);
+                                //System.out.println("Failed to insert data into lhr_procedure (VTS_PROC) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_PROC: " + query_vts_lhr_procedure);
                                 total_fail_insert++;
                             }
                             
@@ -883,11 +883,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";      
 
                             status_vts_lhr_temperature = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_temperature);
-                    //        System.out.println("status status_vts_lhr_temperature :" + status_vts_lhr_temperature);
-                    //        System.out.println("sql vts_lhr_temperature : " + query_vts_lhr_temperature);     
+                    //        //System.out.println("status status_vts_lhr_temperature :" + status_vts_lhr_temperature);
+                    //        //System.out.println("sql vts_lhr_temperature : " + query_vts_lhr_temperature);     
                             if (status_vts_lhr_temperature == false){
-                                System.out.println("Failed to insert data into lhr_temperature (VTS_temp) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for VTS_TEMP: " + query_vts_lhr_temperature);
+                                //System.out.println("Failed to insert data into lhr_temperature (VTS_temp) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for VTS_TEMP: " + query_vts_lhr_temperature);
                                 total_fail_insert++;
                             }
                          
@@ -983,11 +983,11 @@ public class Main {
                                     + "'" + LOCATION_CODE + "')";
 
                             status_fmh_lhr_fh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_fmh_lhr_fh);
-                            //System.out.println("status fmh : " + status_fmh_lhr_fh);
-                            //System.out.println("query fmh : " + query_fmh_lhr_fh);
+                            ////System.out.println("status fmh : " + status_fmh_lhr_fh);
+                            ////System.out.println("query fmh : " + query_fmh_lhr_fh);
                             if (status_fmh_lhr_fh == false){
-                                System.out.println("Failed to insert data into lhr_family_history (FMH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for FMH: " + query_fmh_lhr_fh);
+                                //System.out.println("Failed to insert data into lhr_family_history (FMH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for FMH: " + query_fmh_lhr_fh);
                                 total_fail_insert++;
                             }                            
 
@@ -1076,11 +1076,11 @@ public class Main {
                                     + "'" + LOCATION_CODE + "')";
 
                             status_lhr_pmh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_lhr_pmh);
-                    //        System.out.println("status : " + status_lhr_pmh);
-                    //        System.out.println("query : " + query_lhr_pmh);
+                    //        //System.out.println("status : " + status_lhr_pmh);
+                    //        //System.out.println("query : " + query_lhr_pmh);
                             if (status_lhr_pmh == false){
-                                System.out.println("Failed to insert data into lhr_family_history (PMH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for PMH: " + query_lhr_pmh);
+                                //System.out.println("Failed to insert data into lhr_family_history (PMH) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for PMH: " + query_lhr_pmh);
                                 total_fail_insert++;
                             }     
 
@@ -1172,11 +1172,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";
 
                             status_lhr_ml = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_lhr_ml);
-                    //        System.out.println("query MEC: " + query_lhr_ml);
-                    //        System.out.println("status MEC " + status_lhr_ml);
+                    //        //System.out.println("query MEC: " + query_lhr_ml);
+                    //        //System.out.println("status MEC " + status_lhr_ml);
                             if (status_lhr_ml == false){
-                                System.out.println("Failed to insert data into lhr_med_leave (MEC) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for MEC: " + query_lhr_ml);
+                                //System.out.println("Failed to insert data into lhr_med_leave (MEC) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for MEC: " + query_lhr_ml);
                                 total_fail_insert++;
                             } 
 
@@ -1243,11 +1243,11 @@ public class Main {
                                     + "'" + Centre_Code + "')";
 
                             status_lhr_test = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_lhr_test);
-                            //System.out.println("query LRI : " + query_lhr_test);
-                            //System.out.println("status LRI : " + status_lhr_test);
+                            ////System.out.println("query LRI : " + query_lhr_test);
+                            ////System.out.println("status LRI : " + status_lhr_test);
                             if (status_lhr_test == false){
-                                System.out.println("Failed to insert data into lhr_med_leave (LIR) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
-                                System.out.println("Query for LIR: " + query_lhr_test);
+                                //System.out.println("Failed to insert data into lhr_med_leave (LIR) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
+                                //System.out.println("Query for LIR: " + query_lhr_test);
                                 total_fail_insert++;
                             }
 
@@ -1321,8 +1321,8 @@ public class Main {
                                     + "'" + Centre_Code + "')";
 
                             //boolean status_ros_lhr_fh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_ros_lhr_fh);
-                            //System.out.println("status ros : " + status_ros_lhr_fh);
-                            //System.out.println("query ros : " + query_ros_lhr_fh);
+                            ////System.out.println("status ros : " + status_ros_lhr_fh);
+                            ////System.out.println("query ros : " + query_ros_lhr_fh);
 
                             ros_ArrayList.add(ros_Obj);
                         }
@@ -1332,7 +1332,7 @@ public class Main {
                     boolean update_ehr_central_boolean = false;
 
                     /*
-                    System.out.println(status
+                    //System.out.println(status
                     + " " + stat
                     + " " + stt
                     + " " + status_vts_lhr_wh
@@ -1367,9 +1367,9 @@ public class Main {
 
 
                     if (update_ehr_central_boolean == true) { //get update status
-                        //System.out.println("Patient with Central Code : " + Central_Code + " has updated to 3");
+                        ////System.out.println("Patient with Central Code : " + Central_Code + " has updated to 3");
                     } else {
-                        //System.out.println("Patient with Central Code : " + Central_Code + " has failed update to 3");
+                        ////System.out.println("Patient with Central Code : " + Central_Code + " has failed update to 3");
                     }                    
 
 
@@ -1406,7 +1406,7 @@ public class Main {
                 
 
             }
-            System.out.println("Total failed to insert was : " + total_fail_insert);
+            //System.out.println("Total failed to insert was : " + total_fail_insert);
             
             return true;
         } catch (Exception e) {
