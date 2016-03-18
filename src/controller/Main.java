@@ -1242,16 +1242,16 @@ public class Main {
                                     + "'" + PERSON_STATUS + "',"
                                     + "'" + Centre_Code + "')";
 
-                            status_lhr_test = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_lhr_test);
+//                            status_lhr_test = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_lhr_test);
                             ////System.out.println("query LRI : " + query_lhr_test);
                             ////System.out.println("status LRI : " + status_lhr_test);
                             if (status_lhr_test == false){
                                 //System.out.println("Failed to insert data into lhr_med_leave (LIR) where PMI No : " + PMI_no + " & National ID No : " + NATIONAL_ID_NO + " & Person ID No : " + PERSON_ID_NO);   
                                 //System.out.println("Query for LIR: " + query_lhr_test);
-                                total_fail_insert++;
+//                                total_fail_insert++;
                             }
 
-                            lirBeans.add(lirBean);
+//                            lirBeans.add(lirBean);
                         }
 
                     }
@@ -1384,7 +1384,7 @@ public class Main {
                     String update_lhr_signs = "UPDATE lhr_signs SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
                     rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_signs);  
                     String update_lhr_test = "UPDATE lhr_test SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_test);                      
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_test);                      
                     String update_lhr_weight_height = "UPDATE lhr_weight_height SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
                     rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_weight_height);  
                     String update_lhr_bp = "UPDATE lhr_bp SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";

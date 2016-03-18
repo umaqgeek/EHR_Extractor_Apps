@@ -5,6 +5,7 @@
  */
 package controller;
 
+import Config_Pack.Config;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -19,6 +20,11 @@ public class Thread1 implements Runnable {
 
     public static boolean status = true;
     long sleep = 1000 * 60 * 5;
+    
+    public Thread1(String host, int port) {
+        Config.ipAddressServer = host;
+        Config.portServer = port;
+    }
     
     public void run() {
         
