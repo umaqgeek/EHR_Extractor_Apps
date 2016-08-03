@@ -1375,30 +1375,30 @@ public class Main {
 
                     // update table with doctor_id & doctor_name data
                     
-                    String update_lhr_family_history = "UPDATE lhr_family_history SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_family_history);
-                    String update_lhr_medication = "UPDATE lhr_medication SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_medication);                    
-                    String update_lhr_med_leave = "UPDATE lhr_med_leave SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_med_leave);                      
-                    String update_lhr_signs = "UPDATE lhr_signs SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_signs);  
-                    String update_lhr_test = "UPDATE lhr_test SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_test);                      
-                    String update_lhr_weight_height = "UPDATE lhr_weight_height SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_weight_height);  
-                    String update_lhr_bp = "UPDATE lhr_bp SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_bp);  
-                    String update_lhr_spo2 = "UPDATE lhr_spo2 SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_spo2);                        
-                    String update_lhr_temperature = "UPDATE lhr_temperature SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_temperature);      
-                    String update_lhr_blood_glucose = "UPDATE lhr_blood_glucose SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_blood_glucose);     
-                    String update_lhr_procedure = "UPDATE lhr_procedure SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_procedure);                       
-                    String update_lhr_past_medical_history = "UPDATE lhr_past_medical_history SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
-                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_past_medical_history);                        
+//                    String update_lhr_family_history = "UPDATE lhr_family_history SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_family_history);
+//                    String update_lhr_medication = "UPDATE lhr_medication SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_medication);                    
+//                    String update_lhr_med_leave = "UPDATE lhr_med_leave SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_med_leave);                      
+//                    String update_lhr_signs = "UPDATE lhr_signs SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_signs);  
+//                    String update_lhr_test = "UPDATE lhr_test SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+////                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_test);                      
+//                    String update_lhr_weight_height = "UPDATE lhr_weight_height SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_weight_height);  
+//                    String update_lhr_bp = "UPDATE lhr_bp SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_bp);  
+//                    String update_lhr_spo2 = "UPDATE lhr_spo2 SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_spo2);                        
+//                    String update_lhr_temperature = "UPDATE lhr_temperature SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_temperature);      
+//                    String update_lhr_blood_glucose = "UPDATE lhr_blood_glucose SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_blood_glucose);     
+//                    String update_lhr_procedure = "UPDATE lhr_procedure SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_procedure);                       
+//                    String update_lhr_past_medical_history = "UPDATE lhr_past_medical_history SET doctor_id = '" + dgsB.getDoctor_ID() + "', doctor_name = '" + dgsB.getDoctor_Name() + "' WHERE pmi_no = '" + dgsB.getPMI_no() + "' AND episode_date =  '"+ dgsB.getEpisode_Date() + "' ";
+//                    rc.setQuerySQL(Config.ipAddressServer, Config.portServer, update_lhr_past_medical_history);                        
 
                     
                 } // for loop for EHR_Central records end

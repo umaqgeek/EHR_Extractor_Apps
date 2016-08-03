@@ -16,7 +16,8 @@ public class MainView {
     
     public static void main(String[] args) {
         
-        String host = "ecss.utem.edu.my";
+//        String host = "ecss.utem.edu.my";
+        String host = "10.73.32.200";
         int port = 1099;
         
         try {

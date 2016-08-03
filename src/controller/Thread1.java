@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import views.MainExtractor;
 
 /**
  *
@@ -19,7 +20,7 @@ import java.util.logging.Logger;
 public class Thread1 implements Runnable {
 
     public static boolean status = true;
-    long sleep = 1000 * 60 * 5;
+    long sleep = 1000 * 60 * 1;
     
     public Thread1(String host, int port) {
         Config.ipAddressServer = host;
@@ -36,8 +37,11 @@ public class Thread1 implements Runnable {
                 SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                 System.out.println("["+sdf1.format(date1)+"] Extracting ...");
                 
-                Main m = new Main();
-                m.view();
+//                Main m = new Main();
+//                m.view();
+                
+                MainExtractor me = new MainExtractor();
+                me.extract();
                 
                 Date date2 = new Date();
                 SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
