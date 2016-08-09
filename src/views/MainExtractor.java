@@ -575,21 +575,21 @@ public class MainExtractor {
 
                     //check whether data is not null, not empty and numeric
                         //sitting
-                        if (dataVTS[vts_i][2] != null && !dataVTS[vts_i][2].isEmpty() && dataVTS[vts_i][2].matches("\\d+")) {
+//                        if (dataVTS[vts_i][2] != null && !dataVTS[vts_i][2].isEmpty() && dataVTS[vts_i][2].matches("\\d+")) {
                             vts_Obj.setSystolic_Sitting(dataVTS[vts_i][2]);
-                        } else {
-                            vts_Obj.setSystolic_Sitting("0");
-                        }
-                        if (dataVTS[vts_i][3] != null && !dataVTS[vts_i][3].isEmpty() && dataVTS[vts_i][3].matches("\\d+")) {
+//                        } else {
+//                            vts_Obj.setSystolic_Sitting("0");
+//                        }
+//                        if (dataVTS[vts_i][3] != null && !dataVTS[vts_i][3].isEmpty() && dataVTS[vts_i][3].matches("\\d+")) {
                             vts_Obj.setDiastolic_Sitting(dataVTS[vts_i][3]);
-                        } else {
-                            vts_Obj.setDiastolic_Sitting("0");
-                        }
-                        if (dataVTS[vts_i][13] != null && !dataVTS[vts_i][13].isEmpty() && dataVTS[vts_i][13].matches("\\d+")) {
+//                        } else {
+//                            vts_Obj.setDiastolic_Sitting("0");
+//                        }
+//                        if (dataVTS[vts_i][13] != null && !dataVTS[vts_i][13].isEmpty() && dataVTS[vts_i][13].matches("\\d+")) {
                             vts_Obj.setSitting_Pulse(dataVTS[vts_i][13]);
-                        } else {
-                            vts_Obj.setSitting_Pulse("0");
-                        }
+//                        } else {
+//                            vts_Obj.setSitting_Pulse("0");
+//                        }
 
                         //supine
                         if (dataVTS[vts_i][4] != null && !dataVTS[vts_i][4].isEmpty() && dataVTS[vts_i][4].matches("\\d+")) {
@@ -652,7 +652,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_wh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_wh);
+                            if (Integer.parseInt(vts_Obj.getWeight_Reading()) > 0 && Integer.parseInt(vts_Obj.getHeight_Reading()) > 0) { 
+                                status_vts_lhr_wh = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_wh);
+                            }
                     //    //System.out.println("status vts:" + status_vts_lhr_wh);
                             //    //System.out.println("sql vts : " + query_vts_lhr_wh);
                             if (status_vts_lhr_wh == false) {
@@ -704,7 +706,11 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_bp = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bp);
+                            if (Integer.parseInt(vts_Obj.getSystolic_Sitting()) > 0 
+                                    && Integer.parseInt(vts_Obj.getDiastolic_Sitting()) > 0 
+                                    && Integer.parseInt(vts_Obj.getSitting_Pulse()) > 0) {
+                                status_vts_lhr_bp = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bp);
+                            }
                     //    //System.out.println("status vts_lhr_bp:" + status_vts_lhr_bp);
                             //    //System.out.println("sql vts_lhr_bp : " + query_vts_lhr_bp);     
                             if (status_vts_lhr_bp == false) {
@@ -749,7 +755,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_bg = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bg);
+                            if (Integer.parseInt(vts_Obj.getBlood_Glucose_Level()) > 0) {
+                                status_vts_lhr_bg = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bg);
+                            }
                     //        //System.out.println("status vts_lhr_bg:" + status_vts_lhr_bg);
                             //        //System.out.println("sql vts_lhr_bg : " + query_vts_lhr_bg);                            
                             if (status_vts_lhr_bg == false) {
@@ -794,7 +802,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_spo2 = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_spo2);
+                            if (Integer.parseInt(vts_Obj.getSPO2_Reading()) > 0) {
+                                status_vts_lhr_spo2 = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_spo2);
+                            }
                     //        //System.out.println("status vts_lhr_spo2:" + status_vts_lhr_spo2);
                             //        //System.out.println("sql vts_lhr_spo2 : " + query_vts_lhr_spo2);     
                             if (status_vts_lhr_spo2 == false) {
@@ -838,7 +848,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_procedure = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_procedure);
+                            if (vts_Obj.getProcedure_Cd() != "" && vts_Obj.getProcedure_Cd() != null) {
+                                status_vts_lhr_procedure = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_procedure);
+                            }
                     //    //System.out.println("status vts_lhr_procedure:" + status_vts_lhr_procedure);
                             //    //System.out.println("sql vts_lhr_procedure : " + query_vts_lhr_procedure);     
                             if (status_vts_lhr_procedure == false) {
@@ -885,7 +897,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            status_vts_lhr_temperature = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_temperature);
+                            if (Integer.parseInt(vts_Obj.getTemperature_Reading()) > 0) {
+                                status_vts_lhr_temperature = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_temperature);
+                            }
                     //        //System.out.println("status status_vts_lhr_temperature :" + status_vts_lhr_temperature);
                             //        //System.out.println("sql vts_lhr_temperature : " + query_vts_lhr_temperature);     
                             if (status_vts_lhr_temperature == false) {
@@ -1384,23 +1398,23 @@ public class MainExtractor {
                  + " " + status_lhr_ml
                  + " " + status_lhr_test);
                  */
-                if (status_ccn_lhr_signs == true
-                        && status_dgs_lhr_diagnosis == true
-                        && status_dto_lhr_medication == true
-                        && status_vts_lhr_wh == true
-                        && status_vts_lhr_bp == true
-                        && status_vts_lhr_bg == true
-                        && status_vts_lhr_spo2 == true
-                        && status_vts_lhr_procedure == true
-                        && status_vts_lhr_temperature == true
-                        && status_fmh_lhr_fh == true
-                        && status_lhr_pmh == true
-                        && status_lhr_ml == true
-                        && status_lhr_test == true) {
+//                if (status_ccn_lhr_signs == true
+//                        && status_dgs_lhr_diagnosis == true
+//                        && status_dto_lhr_medication == true
+//                        && status_vts_lhr_wh == true
+//                        && status_vts_lhr_bp == true
+//                        && status_vts_lhr_bg == true
+//                        && status_vts_lhr_spo2 == true
+//                        && status_vts_lhr_procedure == true
+//                        && status_vts_lhr_temperature == true
+//                        && status_fmh_lhr_fh == true
+//                        && status_lhr_pmh == true
+//                        && status_lhr_ml == true
+//                        && status_lhr_test == true) {
 
                     String sql_update_ehr_central = "UPDATE `ehr_central` SET `STATUS` = '3' WHERE `ehr_central`.`CENTRAL_CODE` = '" + Central_Code + "'"; // Update patient status to 3 by using CENTRAL_CODE unique column data.
                     update_ehr_central_boolean = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, sql_update_ehr_central);
-                }
+//                }
 
                 if (update_ehr_central_boolean == true) { //get update status
                     ////System.out.println("Patient with Central Code : " + Central_Code + " has updated to 3");
