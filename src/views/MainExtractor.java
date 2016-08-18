@@ -706,9 +706,9 @@ public class MainExtractor {
                                 + "'" + Centre_Code + "')";
 
                         try {
-                            if (Integer.parseInt(vts_Obj.getSystolic_Sitting()) > 0 
-                                    && Integer.parseInt(vts_Obj.getDiastolic_Sitting()) > 0 
-                                    && Integer.parseInt(vts_Obj.getSitting_Pulse()) > 0) {
+                            if (Double.parseDouble(vts_Obj.getSystolic_Sitting()) > 0 
+                                    && Double.parseDouble(vts_Obj.getDiastolic_Sitting()) > 0 
+                                    && Double.parseDouble(vts_Obj.getSitting_Pulse()) > 0) {
                                 status_vts_lhr_bp = rc.setQuerySQL(Config.ipAddressServer, Config.portServer, query_vts_lhr_bp);
                             }
                     //    //System.out.println("status vts_lhr_bp:" + status_vts_lhr_bp);
